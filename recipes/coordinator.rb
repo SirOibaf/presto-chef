@@ -1,4 +1,4 @@
-node.override.presto.role = "coordinator"
+node.override["presto"]["role"] = "coordinator"
 
 include_recipe "presto::_config"
 

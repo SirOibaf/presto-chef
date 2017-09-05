@@ -1,4 +1,4 @@
-node.override.presto.role = "localhost"
+node.override["presto"]["role"] = "localhost"
 
 include_recipe "presto::_config"
 

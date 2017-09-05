@@ -1,8 +1,8 @@
 #!/bin/bash
 # No "set -e" here, as the kill -0 on the pid might fail
-export HADOOP_HOME=<%= node.hops.base_dir %>
+export HADOOP_HOME=<%= node["hops"]["base_dir"] %>
 
-PID_FILE=<%= node.presto.pid_file %>
+PID_FILE=<%= node["presto"]["pid_file"] %>
 if [ -f $PID_FILE ] ; then
  PID=`cat $PID_FILE`
  kill -0 $PID 2>&1 > /dev/null
@@ -13,5 +13,5 @@ if [ -f $PID_FILE ] ; then
 fi
 
 
-<%= node.presto.base_dir %>/bin/launcher start
+<%= node["presto"]["base_dir"] %>/bin/launcher start
 

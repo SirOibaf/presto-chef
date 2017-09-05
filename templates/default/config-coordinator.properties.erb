@@ -1,11 +1,11 @@
 coordinator=true
-node-scheduler.include-coordinator=<%= node.presto.node_scheduler.include_coordinator %>
-http-server.http.port=<%= node.presto.http.port %>
-query.max-memory=<%= node.presto.query.max_memory %>
-query.max-memory-per-node=<%= node.presto.query.max_memory_per_node %>
-discovery-server.enabled=<%= node.presto.discovery_server.enabled %>
-discovery.uri=http://<%= @my_ip %>:<%= node.presto.http.port %>
-jmx.rmiserver.port=<%= node.presto.rmiport %>
+node-scheduler.include-coordinator=<%= node["presto"]["node_scheduler"]["include_coordinator"] %>
+http-server.http.port=<%= node["presto"]["http"]["port"] %>
+query.max-memory=<%= node["presto"]["query"]["max_memory"] %>
+query.max-memory-per-node=<%= node["presto"]["query"]["max_memory_per_node"] %>
+discovery-server.enabled=<%= node["presto"]["discovery_server"]["enabled"] %>
+discovery.uri=http://<%= @my_ip %>:<%= node["presto"]["http"]["port"] %>
+jmx.rmiserver.port=<%= node["presto"]["rmiport"] %>
 
 
 exchange.http-client.max-connections=1000
@@ -22,10 +22,10 @@ query.client.timeout=5m
 query.min-expire-age=30m
 
 plugin.bundles=\
-   <%= node.presto.base_dir %>/presto/jmx/pom.xml,\
-   <%= node.presto.base_dir %>/presto/hive-hadoop2/pom.xml,\
-   <%= node.presto.base_dir %>/presto/kafka/pom.xml, \
-   <%= node.presto.base_dir %>/presto/mysql/pom.xml
+   <%= node["presto"]["base_dir"] %>/presto/jmx/pom.xml,\
+   <%= node["presto"]["base_dir"] %>/presto/hive-hadoop2/pom.xml,\
+   <%= node["presto"]["base_dir"] %>/presto/kafka/pom.xml, \
+   <%= node["presto"]["base_dir"] %>/presto/mysql/pom.xml
 
 
 
